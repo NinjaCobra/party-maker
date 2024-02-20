@@ -1,5 +1,5 @@
 import { Outlet, useNavigation } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import { Navbar, SearchByLetter } from "../components";
 
 const Layout = () => {
   const navigation = useNavigation();
@@ -9,6 +9,7 @@ const Layout = () => {
     <>
       <Navbar />
       <section>{isPageLoading ? <div>Spinner</div> : <Outlet />}</section>
+      <SearchByLetter />
     </>
   );
 };

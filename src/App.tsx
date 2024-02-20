@@ -9,11 +9,14 @@ import {
   SingleCocktail,
   SinglePageError,
   CocktailsByIngredient,
+  CocktailsByLetter,
 } from "./pages";
 
 import { loader as cocktailsLoader } from "./pages/Cocktails";
 import { loader as singleCocktailLoader } from "./pages/SingleCocktail";
 import { loader as randomCocktailLoader } from "./pages/RandomCocktail";
+import { loader as letterLoader } from "./pages/CocktailsByLetter";
+import { loader as ingredientLoader } from "./pages/CocktailsByIngredient";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -52,10 +55,16 @@ const router = createBrowserRouter([
         loader: randomCocktailLoader(queryClient),
       },
       {
-        path: "ingredient",
+        path: "ingredient/:ingredient",
         element: <CocktailsByIngredient />,
         errorElement: <SinglePageError />,
-        // loader: randomCocktailLoader(queryClient),
+        loader: ingredientLoader(queryClient),
+      },
+      {
+        path: "letter/:letter",
+        element: <CocktailsByLetter />,
+        errorElement: <SinglePageError />,
+        loader: letterLoader(queryClient),
       },
     ],
   },

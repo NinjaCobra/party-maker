@@ -4,7 +4,7 @@ const Ingredients = () => {
   const navigate = useNavigate();
 
   const handleClick = (searchTerm) => {
-    navigate("/ingredient", { state: { searchTerm } });
+    navigate(`/ingredient/${searchTerm}`);
   };
 
   return (

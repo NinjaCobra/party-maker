@@ -6,3 +6,4 @@ export { default as RandomCocktail } from "./RandomCocktail";
 export { default as SingleCocktail } from "./SingleCocktail";
 export { default as SinglePageError } from "./SinglePageError";
 export { default as CocktailsByIngredient } from "./CocktailsByIngredient";
+export { default as CocktailsByLetter } from "./CocktailsByLetter";
