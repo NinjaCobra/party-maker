@@ -1,14 +1,16 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const HomeLayout = () => {
+const Layout = () => {
   const navigation = useNavigation();
+  const isPageLoading = navigation.state === "loading";
+
   return (
     <>
       <Navbar />
-      <Outlet />
+      <section>{isPageLoading ? <div>Spinner</div> : <Outlet />}</section>
     </>
   );
 };
 
-export default HomeLayout;
+export default Layout;
