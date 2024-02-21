@@ -12,11 +12,13 @@ import {
   CocktailsByLetter,
 } from "./pages";
 
-import { loader as cocktailsLoader } from "./pages/Cocktails";
-import { loader as singleCocktailLoader } from "./pages/SingleCocktail";
-import { loader as randomCocktailLoader } from "./pages/RandomCocktail";
-import { loader as letterLoader } from "./pages/CocktailsByLetter";
-import { loader as ingredientLoader } from "./pages/CocktailsByIngredient";
+import {
+  singleCocktailLoader,
+  randomCocktailLoader,
+  getCocktailsByIngredientLoader,
+  getCocktailsByLetterLoader,
+  cocktailsLoader,
+} from "./utils";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -58,13 +60,13 @@ const router = createBrowserRouter([
         path: "ingredient/:ingredient",
         element: <CocktailsByIngredient />,
         errorElement: <SinglePageError />,
-        loader: ingredientLoader(queryClient),
+        loader: getCocktailsByIngredientLoader(queryClient),
       },
       {
         path: "letter/:letter",
         element: <CocktailsByLetter />,
         errorElement: <SinglePageError />,
-        loader: letterLoader(queryClient),
+        loader: getCocktailsByLetterLoader(queryClient),
       },
     ],
   },
