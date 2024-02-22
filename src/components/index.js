@@ -8,3 +8,4 @@ export { default as SearchByLetter } from "./SearchByLetter";
 export { default as ListViewToggle } from "./ListViewToggle";
 export { default as Counter } from "./Counter";
 export { default as CocktailsContainer } from "./CocktailsContainer";
+export { default as ThemeSwitcher } from "./ThemeSwitcher";
