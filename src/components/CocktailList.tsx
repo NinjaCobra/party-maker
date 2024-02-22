@@ -1,6 +1,6 @@
 import CocktailCard from "./CocktailCard";
 
-const CocktailList = ({ drinks }) => {
+const CocktailList = ({ drinks, layout }) => {
   if (!drinks) {
     return (
       <h4 style={{ textAlign: "center" }}>No matching cocktails found...</h4>
@@ -20,7 +20,12 @@ const CocktailList = ({ drinks }) => {
   });
 
   return (
-    <div>
+    <div
+      className={
+        layout === "grid"
+          ? "pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+          : "mt-12 grid gap-y-8"
+      }>
       {formattedDrinks.map((item) => {
         return <CocktailCard key={item.id} {...item} />;
       })}
