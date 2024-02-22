@@ -10,6 +10,9 @@ export const searchCocktailsQuery = (searchType, searchTerm) => {
     case "ingredient":
       searchUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
       break;
+    case "ingredientInfo":
+      searchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=";
+      break;
     case "letter":
       searchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=";
       break;
@@ -26,12 +29,10 @@ export const searchCocktailsQuery = (searchType, searchTerm) => {
   return {
     queryKey: [searchType, searchTerm],
     queryFn: async () => {
-      if (searchType === "random") {
-        const response = await axios.get(`${searchUrl}`);
-        return response.data.drinks;
+      const response = await axios.get(`${searchUrl}${searchTerm || ""}`);
+      if (searchType === "ingredientInfo") {
+        return response.data;
       }
-
-      const response = await axios.get(`${searchUrl}${searchTerm}`);
       return response.data.drinks;
     },
   };
