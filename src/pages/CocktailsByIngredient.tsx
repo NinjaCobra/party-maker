@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import CocktailList from "../components/CocktailList";
+import { CocktailList, Counter } from "../components";
 import { useQuery } from "@tanstack/react-query";
 import { searchCocktailsQuery } from "../utils";
 
@@ -15,7 +15,8 @@ const CocktailsByIngredient = () => {
         src='https://www.thecocktaildb.com/images/ingredients/gin.png'
         alt='gin'
       />
-      <CocktailList drinks={drinks} />
+      <Counter drinks={drinks} />
+      <CocktailList drinks={drinks} layout='list' />
     </>
   );
 };

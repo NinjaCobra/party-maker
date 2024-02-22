@@ -27,7 +27,7 @@ const CocktailList = ({ drinks, layout }) => {
           : "mt-12 grid gap-y-8"
       }>
       {formattedDrinks.map((item) => {
-        return <CocktailCard key={item.id} {...item} />;
+        return <CocktailCard key={item.id} {...item} layout={layout} />;
       })}
     </div>
   );

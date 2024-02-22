@@ -1,17 +1,16 @@
 import { useLoaderData } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import CocktailList from "../components/CocktailList";
-import { searchCocktailsQuery } from "../utils";
+import { CocktailsContainer } from "../components";
 
-const Cocktails = () => {
+const CocktailsByLetter = () => {
   const { searchTerm } = useLoaderData();
-  const { data: drinks } = useQuery(searchCocktailsQuery("letter", searchTerm));
 
   return (
-    <>
-      <CocktailList drinks={drinks} />
-    </>
+    <CocktailsContainer
+      searchTerm={searchTerm}
+      searchType='letter'
+      showSearchForm={false}
+    />
   );
 };
 
-export default Cocktails;
+export default CocktailsByLetter;

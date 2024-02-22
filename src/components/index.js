@@ -6,3 +6,5 @@ export { default as CocktailDetails } from "./CocktailDetails";
 export { default as Ingredients } from "./Ingredients";
 export { default as SearchByLetter } from "./SearchByLetter";
 export { default as ListViewToggle } from "./ListViewToggle";
+export { default as Counter } from "./Counter";
+export { default as CocktailsContainer } from "./CocktailsContainer";
