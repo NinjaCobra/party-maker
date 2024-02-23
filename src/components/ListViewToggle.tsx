@@ -1,7 +1,12 @@
 import { BsFillGridFill, BsList } from "react-icons/bs";
 
-const ListViewToggle = ({ onToggle, layout }) => {
-  const setActiveStyles = (pattern) => {
+interface ListViewProps {
+  onToggle: () => void;
+  layout: string;
+}
+
+const ListViewToggle = ({ onToggle, layout }: ListViewProps) => {
+  const setActiveStyles = (pattern: string) => {
     return `text-xl btn btn-circle btn-sm ${
       pattern === layout
         ? "btn-primary text-primary-content"

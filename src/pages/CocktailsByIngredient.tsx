@@ -1,16 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import { CocktailList, Counter } from "../components";
 import { useQuery } from "@tanstack/react-query";
-import { searchCocktailsQuery } from "../utils";
+import { searchCocktailsQuery, searchIngredientQuery } from "../utils/index";
 
 const CocktailsByIngredient = () => {
-  const { searchTerm } = useLoaderData();
+  const { searchTerm } = useLoaderData() as { searchTerm: string };
   const { data: drinks } = useQuery(
     searchCocktailsQuery("ingredient", searchTerm)
   );
   const { data, isLoading } = useQuery(
-    searchCocktailsQuery("ingredientInfo", searchTerm)
+    searchIngredientQuery("ingredientInfo", searchTerm)
   );
+  console.log(data);
   const ingredientInfo = data && data.ingredients[0];
 
   return (

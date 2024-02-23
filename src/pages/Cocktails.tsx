@@ -6,7 +6,7 @@ const getSearchTermFromLocalStorage = () => {
 };
 
 const Cocktails = () => {
-  const { searchTerm } = useLoaderData();
+  const { searchTerm } = useLoaderData() as {searchTerm: string};
 
   return (
     <CocktailsContainer

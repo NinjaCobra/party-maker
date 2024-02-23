@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Ingredients = () => {
   const navigate = useNavigate();
 
-  const handleClick = (searchTerm) => {
+  const handleClick = (searchTerm: string) => {
     navigate(`/ingredient/${searchTerm}`);
   };
 

@@ -1,14 +1,17 @@
 import { Form, useNavigation } from "react-router-dom";
+import { FormEvent, ChangeEvent } from "react";
 
-const SearchForm = ({ searchTerm }) => {
+const SearchForm = ({ searchTerm }: { searchTerm: string }) => {
   const navigation = useNavigation();
 
   const isSubmitting = navigation.state === "submitting";
-  const handleSubmit = (e) => {
-    localStorage.setItem("search", e.target[0].value);
+  const handleSubmit = (e: FormEvent) => {
+    const formData = new FormData(e.target as HTMLFormElement);
+    const searchTerm = formData.get("search") as string;
+    localStorage.setItem("search", searchTerm);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === "") {
       localStorage.removeItem("search");
     }

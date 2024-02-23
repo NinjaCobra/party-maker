@@ -8,11 +8,21 @@ import {
   Counter,
 } from "../components";
 
-const getLayoutFromLocalStorage = () => {
+interface ContainerProps {
+  searchTerm: string;
+  searchType: string;
+  showSearchForm: boolean;
+}
+
+const getLayoutFromLocalStorage = (): string => {
   return localStorage.getItem("layout") || "grid";
 };
 
-const CocktailsContainer = ({ searchTerm, searchType, showSearchForm }) => {
+const CocktailsContainer = ({
+  searchTerm,
+  searchType,
+  showSearchForm,
+}: ContainerProps) => {
   const [layout, setLayout] = useState(getLayoutFromLocalStorage());
   const { data: drinks } = useQuery(
     searchCocktailsQuery(searchType, searchTerm)

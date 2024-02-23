@@ -1,6 +1,20 @@
 import CocktailCard from "./CocktailCard";
 
-const CocktailList = ({ drinks, layout }) => {
+export interface Drink {
+  idDrink: string;
+  strDrink: string;
+  strDrinkThumb: string;
+  strAlcoholic: string;
+  strGlass: string;
+}
+
+interface CocktailListProps {
+  drinks: Drink[];
+  layout: string;
+}
+
+const CocktailList = ({ drinks, layout }: CocktailListProps) => {
+  console.log(drinks);
   if (!drinks) {
     return (
       <h4 style={{ textAlign: "center" }}>No matching cocktails found...</h4>

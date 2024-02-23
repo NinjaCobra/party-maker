@@ -1,11 +1,29 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { searchCocktailsQuery } from "../utils";
 
-const CocktailDetails = ({ searchType, queryFn, id }) => {
+interface DrinkDetails {
+  strDrink: string;
+  strDrinkThumb: string;
+  strAlcoholic: string;
+  strCategory: string;
+  strGlass: string;
+  strInstructions: string;
+  [key: string]: string | null;
+}
+
+interface CocktailDetailsProps {
+  searchType: string;
+  id?: string;
+}
+
+const CocktailDetails = ({ searchType, id }: CocktailDetailsProps) => {
   const navigate = useNavigate();
-  const { data, refetch } = useQuery(queryFn(searchType, id || ""));
+  const { data, refetch } = useQuery(
+    searchCocktailsQuery(searchType, id || "")
+  );
   if (!data) return <Navigate to='/' />;
-  const singleDrink = data[0];
+  const singleDrink: DrinkDetails = data[0];
 
   const {
     strDrink: name,

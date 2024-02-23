@@ -1,7 +1,16 @@
 import { Link, useRouteError } from "react-router-dom";
 
+export interface RouteError {
+  data: string;
+  error: Error;
+  internal: boolean;
+  status: number;
+  statusText: string;
+}
+
 const Error = () => {
-  const error = useRouteError();
+  const error = useRouteError() as RouteError;
+
   if (error.status === 404) {
     return (
       <div>

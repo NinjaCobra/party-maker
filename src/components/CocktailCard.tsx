@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 
-const CocktailCard = ({ image, name, id, info, glass, layout }) => {
+interface CardProps {
+  image: string;
+  name: string;
+  id: string;
+  info: string;
+  glass: string;
+  layout: string;
+}
+
+const CocktailCard = ({ image, name, id, info, glass, layout }: CardProps) => {
   return layout === "grid" ? (
     <Link
       to={`/cocktail/${id}`}

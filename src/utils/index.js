@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const searchCocktailsQuery = (searchType, searchTerm) => {
-  console.log("Search Type:", searchType);
   let searchUrl;
   switch (searchType) {
     case "name":
@@ -9,9 +8,6 @@ export const searchCocktailsQuery = (searchType, searchTerm) => {
       break;
     case "ingredient":
       searchUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
-      break;
-    case "ingredientInfo":
-      searchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=";
       break;
     case "letter":
       searchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=";
@@ -38,6 +34,18 @@ export const searchCocktailsQuery = (searchType, searchTerm) => {
   };
 };
 
+export const searchIngredientQuery = (searchType, searchTerm) => {
+  const searchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=";
+
+  return {
+    queryKey: [searchType, searchTerm],
+    queryFn: async () => {
+      const response = await axios.get(`${searchUrl}${searchTerm}`);
+      return response.data;
+    },
+  };
+};
+
 export const loader =
   (queryClient, queryFn, searchType) =>
   async ({ request, params }) => {
@@ -59,7 +67,6 @@ export const loader =
         break;
       case "cocktail":
         searchTerm = params.id;
-        console.log(searchTerm);
         break;
 
       default:
