@@ -1,18 +1,18 @@
-import { Outlet, useNavigation } from "react-router-dom";
-import { Navbar, SearchByLetter, ThemeSwitcher } from "../components";
+import { Outlet, useNavigation } from 'react-router-dom';
+import { Navbar, SearchByLetter, Footer, Loader } from '../components';
 
 const Layout = () => {
-  const navigation = useNavigation();
-  const isPageLoading = navigation.state === "loading";
+    const navigation = useNavigation();
+    const isPageLoading = navigation.state === 'loading';
 
-  return (
-    <>
-      <Navbar />
-      <ThemeSwitcher />
-      <section>{isPageLoading ? <div>Spinner</div> : <Outlet />}</section>
-      <SearchByLetter />
-    </>
-  );
+    return (
+        <>
+            <Navbar />
+            <>{isPageLoading ? <Loader /> : <Outlet />}</>
+            <SearchByLetter />
+            <Footer />
+        </>
+    );
 };
 
 export default Layout;

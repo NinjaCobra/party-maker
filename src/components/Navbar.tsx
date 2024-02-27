@@ -1,23 +1,30 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = () => {
-  return (
-    <div>
-        <span>Logo</span>
-        <div>
-        <NavLink to='/' className='nav-link'>
-            Home
-          </NavLink>
-          <NavLink to='/cocktails' className='nav-link'>
-            Cocktails
-          </NavLink>
-          <NavLink to='/whynot' className='nav-link'>
-            WhyNot?
-          </NavLink>
-        </div>
-      
-    </div>
-  )
-}
+    return (
+        <nav className="navbar bg-base-100 px-5">
+            <div className="navbar-start">
+                <Link to="/" className="btn btn-circle btn-outline p-1">
+                    <img src={logo} alt="Background" className="w-16" />
+                </Link>
+            </div>
 
-export default Navbar
+            <div className="navbar-end">
+                <ThemeSwitcher />
+                <NavLink to="/" className="btn btn-ghost text-xl">
+                    Home
+                </NavLink>
+                <NavLink to="/cocktails" className="btn btn-ghost text-xl">
+                    Cocktails
+                </NavLink>
+                <NavLink to="/whynot" className="btn btn-ghost text-xl">
+                    WhyNot?
+                </NavLink>
+            </div>
+        </nav>
+    );
+};
+
+export default Navbar;
