@@ -1,13 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { IngredientsList } from '../components';
+import bg from '../assets/background.jpg';
 
 const Home = () => {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate('/cocktails');
     };
-
-    const bg = '/src/assets/background.jpg';
 
     return (
         <>

@@ -38,3 +38,7 @@ Welcome to _PartyMaker!_ 🎉 This app is your go-to source for finding exciting
 >    `npm run dev`
 
 Enjoy exploring the world of cocktails with PartyMaker! If you have any feedback, suggestions, or issues, feel free to reach out to me. Cheers! 🍹🎉
+
+## Live Page
+
+[PartyMaker](https://party-maker.vercel.app/)

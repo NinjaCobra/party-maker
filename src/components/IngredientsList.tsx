@@ -8,7 +8,7 @@ const IngredientsList = () => {
             <Title title="popular ingredients" />
             <div className="carousel-container  xl:flex-list sm:max-h-[450px]">
                 {ingredients.map((item) => {
-                    return <Ingredient ingredient={item} />;
+                    return <Ingredient key={item} ingredient={item} />;
                 })}
             </div>
         </section>
