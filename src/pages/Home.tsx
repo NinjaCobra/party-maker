@@ -16,9 +16,11 @@ const Home = () => {
                 style={{ backgroundImage: `url(${bg})` }}
             >
                 <div className="p-8 text-right">
-                    <div className="max-w-xl">
-                        <h1 className="mb-5  text-7xl uppercase">PartyMaker</h1>
-                        <p className="mb-5 py-6 text-left">
+                    <div className="max-w-xl rounded-xl bg-black opacity-90">
+                        <h1 className="mb-5 text-5xl uppercase text-primary xl:text-7xl">
+                            PartyMaker
+                        </h1>
+                        <p className="mb-5  p-6 text-left text-primary">
                             Your ultimate party companion app! Dive into a world
                             of delightful drink recipes sourced from the
                             entertaining Cocktails DB API. With just a swipe,
@@ -30,7 +32,7 @@ const Home = () => {
                         </p>
                         <button
                             type="button"
-                            className="btn btn-primary "
+                            className="btn  bg-accent text-accent-content"
                             onClick={handleClick}
                         >
                             Explore now!

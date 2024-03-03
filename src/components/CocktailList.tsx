@@ -16,7 +16,7 @@ interface CocktailListProps {
 const CocktailList = ({ drinks, layout }: CocktailListProps) => {
     if (!drinks) {
         return (
-            <h4 style={{ textAlign: 'center' }}>
+            <h4 className="h-screen text-center">
                 No matching cocktails found...
             </h4>
         );

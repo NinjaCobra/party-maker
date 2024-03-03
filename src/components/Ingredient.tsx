@@ -9,7 +9,7 @@ const Ingredient = ({ ingredient }: { ingredient: string }) => {
 
     return (
         <div
-            className="card glass w-96 cursor-pointer transition duration-300 ease-in-out hover:scale-90 hover:text-cyan-400"
+            className="card carousel-item glass max-w-96 cursor-pointer transition duration-300 ease-in-out hover:scale-90 hover:bg-neutral-content hover:text-neutral "
             onClick={() => handleClick(ingredient)}
         >
             <figure>

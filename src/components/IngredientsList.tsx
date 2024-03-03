@@ -4,9 +4,9 @@ const IngredientsList = () => {
     const ingredients = ['gin', 'rum', 'tequila'];
 
     return (
-        <section className="mb-10 px-10">
+        <section className="mb-10 px-10 text-center">
             <Title title="popular ingredients" />
-            <div className="flex items-center justify-around">
+            <div className="carousel-container  xl:flex-list sm:max-h-[450px]">
                 {ingredients.map((item) => {
                     return <Ingredient ingredient={item} />;
                 })}

@@ -5,14 +5,14 @@ const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 const SearchByLetter = () => {
     return (
-        <section className="">
+        <section className="mb-10 px-5">
             <Title title="browse by name" />
-            <div className="mb-10 flex items-center justify-center px-5">
+            <div className="flex flex-wrap items-center justify-center">
                 {alphabet.map((letter) => (
                     <Link
                         to={`/letter/${letter}`}
                         key={letter}
-                        className="mr-5 cursor-pointer text-2xl hover:text-blue-500 "
+                        className="mr-5 cursor-pointer rounded p-1 text-2xl transition duration-200 ease-in-out hover:scale-110 hover:bg-accent-content  hover:text-accent "
                     >
                         {letter.toUpperCase()}
                     </Link>

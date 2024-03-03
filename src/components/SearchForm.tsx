@@ -51,7 +51,11 @@ const SearchForm = ({ searchTerm }: { searchTerm: string }) => {
                     />
                 </svg>
             </label>
-            <button type="submit" className="btn" disabled={isSubmitting}>
+            <button
+                type="submit"
+                className="btn btn-neutral"
+                disabled={isSubmitting}
+            >
                 {isSubmitting ? 'searching...' : 'search'}
             </button>
         </Form>

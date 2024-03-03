@@ -1,11 +1,11 @@
-import { CocktailDetails } from "../components";
+import { CocktailDetails } from '../components';
 
 const RandomCocktail = () => {
-  return (
-    <>
-      <CocktailDetails searchType='random' id='' />
-    </>
-  );
+    return (
+        <>
+            <CocktailDetails searchType="random" id="" />
+        </>
+    );
 };
 
 export default RandomCocktail;

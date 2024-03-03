@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .drink-data {
+        @apply mr-2 rounded-lg bg-primary px-1 py-2 uppercase tracking-widest text-primary-content;
+    }
+    .drink-text {
+        @apply mb-6 leading-8;
+    }
+
+    .flex-list {
+        @apply flex-row items-center justify-evenly gap-10;
+    }
+
+    .carousel-container {
+        @apply carousel carousel-vertical max-h-[395px] rounded-box;
+    }
+}

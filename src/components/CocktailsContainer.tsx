@@ -37,7 +37,7 @@ const CocktailsContainer = ({
     };
 
     return (
-        <section className="mb-10 px-5">
+        <section className="mb-10 px-10">
             {showSearchForm && <SearchForm searchTerm={searchTerm} />}
             <ListViewToggle onToggle={handleToggle} layout={layout} />
             <Counter drinks={drinks} />
