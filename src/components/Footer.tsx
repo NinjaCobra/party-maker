@@ -8,7 +8,7 @@ const Footer = () => {
                 <p>Developed 2024</p>
             </aside>
             <nav className="grid grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-                <a href="https://github.com/VadymPopov" target="_blank">
+                <a href="https://github.com/NinjaCobra" target="_blank">
                     <VscGithub size={24} className="fill-current" />
                 </a>
                 <a

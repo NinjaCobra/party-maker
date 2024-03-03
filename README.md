@@ -26,7 +26,7 @@ Welcome to _PartyMaker!_ 🎉 This app is your go-to source for finding exciting
 ## Installation
 
 > 1. Clone the repository:
->    `git clone https://github.com/VadymPopov/party-maker`
+>    `git clone https://github.com/NinjaCobra/party-maker`
 
 > 2. Navigate into the project directory:
 >    `cd party-maker`
